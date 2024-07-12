@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #a5f3fc;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 10vh 1fr;
+}
+
+.header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    justify-self: start;
+}
+
+.book-form {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 1rem;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+h2 {
+    text-align: center;
+}
+
+#book-form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#book-form-content label {
+    margin-top: 10px;
+}
+
+#book-form-content input[type="text"],
+#book-form-content input[type="number"], 
+#book-form-content button {
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius: 0.8rem;
+
+}
+
+.toggle-read-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.toggle-read-button label {
+    margin-right: 10px;
+}
+
+/*Create a container for the toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+/* Hide the default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Create the slider with absolute positioning to fill the entire switch container*/
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height:18px;
+    width:18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Changes the background color when the checkbox is checked */
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+/* Moves the slider to the right when the checkbox is checked */
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.book-list {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 1rem;
+    border-top: 2px solid black;
+}

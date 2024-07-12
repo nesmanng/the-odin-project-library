@@ -1,1 +1,1 @@
-# the-odin-project-library
+This project is aimed at building a small library app.
