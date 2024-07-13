@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #a5f3fc;
+    font-family: 'EB Garamond', sans-serif;
+    background-color: white;
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -12,25 +15,35 @@ body {
     width: 100%;
     height: 100%;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 10vh 1fr;
+    grid-template-rows: 15vh 1fr;
+}
+
+.header-container {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    width: 100%;
+    border-bottom: 1px solid #d1d5db;
+    background-color: #f5f5f5;
 }
 
 .header {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
     font-size: 2rem;
     font-weight: bold;
-    justify-self: start;
+}
+
+.header-container p {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: 200;
 }
 
 .book-form {
     grid-column: 1;
     grid-row: 2;
     padding: 1rem;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    background-color: #cbd5e1;
 }
 
 h2 {
@@ -131,18 +144,17 @@ input:checked + .slider:before {
     grid-column: 2;
     grid-row: 2;
     padding: 1rem;
-    border-top: 2px solid black;
 }
 
 #book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
 .book {
-    background-color: #ef4444;
+    background: linear-gradient(to bottom, #ff8a00, #e52e71);
     color: white;
     font-weight: bold;
     border: 1px solid #ddd;
@@ -155,29 +167,48 @@ input:checked + .slider:before {
     position: relative;
 }
 
-.remove-book {  /* Changed from .remove-btn to .remove-book */
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    line-height: 1.2em;
+    max-height: 2.4em;
+    text-overflow: ellipsis;
+}
+
+.book p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.remove-book {  
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff4444;
+    bottom: 15px;
+    right: 15px;
+    background-color: transparent;
     color: white;
-    border: none;
-    border-radius: 50%;
     width: 30px;
     height: 30px;
-    font-size: 16px;
+    font-size: 18px;  
+    font-weight: bold;  
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: background-color 0.3s ease;
+    border: none;
 }
 
-.book:hover .remove-book {  /* Changed from .remove-btn to .remove-book */
-    opacity: 1;
+.remove-book::before {
+    content: "X";  
+    line-height: 1; 
 }
 
-.remove-book:hover {  /* Changed from .remove-btn to .remove-book */
-    background-color: #cc0000;
+.remove-book:hover {  
+    background-color: #ff6666;
+    border-radius: 50%;
 }
